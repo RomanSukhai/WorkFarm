@@ -35,11 +35,94 @@ public class Main {
          boolean q = false;
         Scanner scanner = new Scanner(System.in);
         while (q=true){
-        System.out.println("1");
-        String user= scanner.next();
+            System.out.println(" ");
+        System.out.println("Початок програми:");
+        System.out.println("   start-запустити програму");
+        String user= scanner.nextLine();
              if (user.equals("start")){
-                 System.out.println("2");
-                 String user2= scanner.next();
+                 System.out.println("Яку дію ви хочете зробити: ");
+                 System.out.println("    print all-вивсти все");
+                 System.out.println("    delete-видилення ");
+                 System.out.println("    add-обавлення");
+                 String user2= scanner.nextLine();
+                 if (user2.equals("delete")){
+                     System.out.println("Яку тваринку");
+                     System.out.println("  cow-корова");
+                     System.out.println("  dog-собака");
+                     System.out.println("  hourse-коня");
+                     String user3 = scanner.nextLine();
+                     if (user3.equals("cow")){
+                         System.out.println("Яку корову видалити:");
+                         System.out.println("  1;2;3");
+                         String user4 = scanner.nextLine();
+                         if (user4.equals("1")){
+                             c[0]=null;
+                         }
+                         else if(user4.equals("2")){
+                             c[1]=null;
+                         }
+                         else if(user4.equals("3")){
+                             c[2]=null;
+                         }
+                         else {
+                             System.out.println("error");
+                         }
+                     }
+                     if (user3.equals("dog")){
+                         System.out.println("Якого собаку видалити:");
+                         System.out.println("  1;2;3");
+                         String user4 = scanner.nextLine();
+                         if (user4.equals("1")){
+                             d[0]=null;
+                         }
+                         else if(user4.equals("2")){
+                             d[1]=null;
+                         }
+                         else if(user4.equals("3")){
+                             d[2]=null;
+                         }
+                         else {
+                             System.out.println("error");
+                         }
+                     }
+                     if (user3.equals("hourse")){
+                         System.out.println("Якого коня видалити:");
+                         System.out.println("  1;2;3");
+                         String user4 = scanner.nextLine();
+                         if (user4.equals("1")){
+                             h[0]=null;
+                         }
+                         else if(user4.equals("2")){
+                             h[1]=null;
+                         }
+                         else if(user4.equals("3")){
+                             h[2]=null;
+                         }
+                         else {
+                             System.out.println("error");
+                         }
+                     }
+                     else {
+                         System.out.println("error3");
+                     }
+                 }
+                 if (user2.equals("add")){
+                     System.out.println("Кого добавити");
+                     System.out.println("  cow-корову");
+                     System.out.println("  dog-собака");
+                     System.out.println("  hourse-кінь");
+                     String user5 = scanner.nextLine();
+                     if (user5.equals("cow")){
+                         System.out.print("Name: ");  String name = scanner.nextLine();
+                         System.out.print("Age: "); int age =scanner.nextInt();
+                         System.out.print("Height: "); int height =scanner.nextInt();
+                         Cow cow3 = new Cow(name,age,height,"Топ за свої гроші");
+                         c[3]=cow3;
+                     }
+                     else {
+                         System.out.println("error");
+                     }
+                 }
                  if (user2.equals("print all")){
                      for (int i =0 ; i<c.length;i++){
                          System.out.println(c[i]);
@@ -53,12 +136,10 @@ public class Main {
                          System.out.println(h[i]);
                      }
                  }
-                 else {
-                     System.out.println("error");
-                 }
+
              }
              else {
-                 System.out.println("error");
+                 System.out.println("error1");
              }
          }
     }
